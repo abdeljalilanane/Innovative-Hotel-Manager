@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>307</width>
-    <height>391</height>
+    <width>313</width>
+    <height>403</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;b&gt;Check-in Form&lt;/b&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enregistrer Form&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -64,6 +64,16 @@
      </item>
      <item>
       <property name="text">
+       <string>Belga</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Brasilero</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
        <string>Bangladesh</string>
       </property>
      </item>
@@ -95,6 +105,31 @@
      <item>
       <property name="text">
        <string>Sri Lanka</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Canadiense</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Francés</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Italiano</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Mexicano</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Español</string>
       </property>
      </item>
     </widget>
@@ -153,7 +188,7 @@
    <item row="7" column="0" colspan="2">
     <widget class="QLabel" name="label_7">
      <property name="text">
-      <string>Purpose of Visit</string>
+      <string>Objet de la visite</string>
      </property>
     </widget>
    </item>
@@ -194,7 +229,7 @@
    <item row="8" column="0" colspan="2">
     <widget class="QLabel" name="label_8">
      <property name="text">
-      <string>Total Occupants</string>
+      <string>Les occupants totales</string>
      </property>
     </widget>
    </item>
@@ -211,7 +246,7 @@
    <item row="9" column="0">
     <widget class="QLabel" name="label_9">
      <property name="text">
-      <string>Category</string>
+      <string>Catégorie</string>
      </property>
     </widget>
    </item>
@@ -225,7 +260,7 @@
      </property>
      <item>
       <property name="text">
-       <string>:: select one ::</string>
+       <string>:: select une ::</string>
       </property>
      </item>
     </widget>
@@ -233,7 +268,7 @@
    <item row="10" column="0">
     <widget class="QLabel" name="label_10">
      <property name="text">
-      <string>Room No</string>
+      <string>No Chambre</string>
      </property>
     </widget>
    </item>
