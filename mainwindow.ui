@@ -736,7 +736,7 @@ color: rgb(170, 0, 0)
 }</string>
            </property>
            <property name="text">
-            <string>Another Line Of Text (the hotel motto, for example)</string>
+            <string>Une autre ligne de texte (le slogan hôtel, par exemple)</string>
            </property>
           </widget>
          </item>
@@ -778,7 +778,7 @@ color: rgb(170, 0, 0)
          </property>
          <property name="icon">
           <iconset resource="images.qrc">
-           <normaloff>:/img/img/icon.png</normaloff>:/img/img/icon.png</iconset>
+           <normaloff>:/img/img/largeIcon.png</normaloff>:/img/img/largeIcon.png</iconset>
          </property>
          <property name="iconSize">
           <size>
