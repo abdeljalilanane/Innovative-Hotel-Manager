@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;b&gt;Check-out Form&lt;/b&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f24129;&quot;&gt;Départ Formulaire&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -33,7 +33,7 @@
      <item row="0" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Room No</string>
+        <string>No Chambre</string>
        </property>
       </widget>
      </item>
@@ -96,7 +96,7 @@ p, li { white-space: pre-wrap; }
      <item row="2" column="0">
       <widget class="QLabel" name="label_8">
        <property name="text">
-        <string>Total Bill</string>
+        <string>Total Fact</string>
        </property>
       </widget>
      </item>
@@ -124,7 +124,7 @@ p, li { white-space: pre-wrap; }
      <item row="4" column="0">
       <widget class="QLabel" name="label_11">
        <property name="text">
-        <string>Balance</string>
+        <string>Reste</string>
        </property>
       </widget>
      </item>
@@ -165,7 +165,7 @@ p, li { white-space: pre-wrap; }
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Clear Payment</string>
+        <string>Paiyement</string>
        </property>
       </widget>
      </item>
@@ -175,7 +175,7 @@ p, li { white-space: pre-wrap; }
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Check Out</string>
+        <string>Depart</string>
        </property>
       </widget>
      </item>
