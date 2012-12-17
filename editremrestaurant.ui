@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>364</width>
-    <height>141</height>
+    <height>161</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;b&gt;Remove Menu Item&lt;/b&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Supprimer un élément du menu&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -31,7 +31,7 @@
    <item row="2" column="0">
     <widget class="QLabel" name="label_2">
      <property name="text">
-      <string>Select Item To Remove</string>
+      <string>Sélectionnez l'élément à supprimer</string>
      </property>
     </widget>
    </item>

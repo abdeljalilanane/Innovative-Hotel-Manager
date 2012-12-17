@@ -17,7 +17,7 @@
    <item row="0" column="0">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; color:#f24129;&quot;&gt;Départ Formulaire&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Départ formulaire&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -82,7 +82,7 @@ p, li { white-space: pre-wrap; }
      <item row="1" column="0">
       <widget class="QLabel" name="label_5">
        <property name="text">
-        <string>Check-in</string>
+        <string>Enregistrement</string>
        </property>
       </widget>
      </item>
@@ -96,7 +96,7 @@ p, li { white-space: pre-wrap; }
      <item row="2" column="0">
       <widget class="QLabel" name="label_8">
        <property name="text">
-        <string>Total Fact</string>
+        <string>Total de la facture</string>
        </property>
       </widget>
      </item>
@@ -110,7 +110,7 @@ p, li { white-space: pre-wrap; }
      <item row="3" column="0">
       <widget class="QLabel" name="label_9">
        <property name="text">
-        <string>Paid</string>
+        <string>Payé</string>
        </property>
       </widget>
      </item>
@@ -124,7 +124,7 @@ p, li { white-space: pre-wrap; }
      <item row="4" column="0">
       <widget class="QLabel" name="label_11">
        <property name="text">
-        <string>Reste</string>
+        <string>Solde</string>
        </property>
       </widget>
      </item>
@@ -165,7 +165,7 @@ p, li { white-space: pre-wrap; }
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Paiyement</string>
+        <string>Paiement effacer</string>
        </property>
       </widget>
      </item>
@@ -175,7 +175,7 @@ p, li { white-space: pre-wrap; }
         <bool>false</bool>
        </property>
        <property name="text">
-        <string>Depart</string>
+        <string>Check Out</string>
        </property>
       </widget>
      </item>

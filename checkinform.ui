@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>313</width>
+    <width>348</width>
     <height>403</height>
    </rect>
   </property>
@@ -17,7 +17,7 @@
    <item row="0" column="0" colspan="2">
     <widget class="QLabel" name="label">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enregistrer Form&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Enregistrement forme&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
@@ -64,16 +64,6 @@
      </item>
      <item>
       <property name="text">
-       <string>Belga</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Brasilero</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
        <string>Bangladesh</string>
       </property>
      </item>
@@ -107,31 +97,6 @@
        <string>Sri Lanka</string>
       </property>
      </item>
-     <item>
-      <property name="text">
-       <string>Canadiense</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Francés</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Italiano</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Mexicano</string>
-      </property>
-     </item>
-     <item>
-      <property name="text">
-       <string>Español</string>
-      </property>
-     </item>
     </widget>
    </item>
    <item row="5" column="0">
@@ -147,7 +112,7 @@
    <item row="6" column="0" colspan="2">
     <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>Occupation</string>
+      <string>Profession</string>
      </property>
     </widget>
    </item>
@@ -155,12 +120,12 @@
     <widget class="QComboBox" name="occupation">
      <item>
       <property name="text">
-       <string>Student</string>
+       <string>étudiant</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Businessman</string>
+       <string>Homme d'affaires</string>
       </property>
      </item>
      <item>
@@ -246,7 +211,7 @@
    <item row="9" column="0">
     <widget class="QLabel" name="label_9">
      <property name="text">
-      <string>Catégorie</string>
+      <string>catégorie</string>
      </property>
     </widget>
    </item>
@@ -260,7 +225,7 @@
      </property>
      <item>
       <property name="text">
-       <string>:: select une ::</string>
+       <string>.: select one :.</string>
       </property>
      </item>
     </widget>

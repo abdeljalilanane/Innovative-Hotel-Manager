@@ -78,7 +78,7 @@ p, li { white-space: pre-wrap; }
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
-        <string>Item</string>
+        <string>Menu</string>
        </property>
       </widget>
      </item>
@@ -92,7 +92,7 @@ p, li { white-space: pre-wrap; }
      <item row="2" column="0">
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Quantité</string>
+        <string>Quantity</string>
        </property>
       </widget>
      </item>
@@ -186,7 +186,7 @@ p, li { white-space: pre-wrap; }
      </column>
      <column>
       <property name="text">
-       <string>Prix</string>
+       <string>Price</string>
       </property>
      </column>
     </widget>

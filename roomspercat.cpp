@@ -11,9 +11,8 @@ roomsPerCat::roomsPerCat(QWidget *parent) :
     ui->setupUi(this);
 
 
-    ui->cat->setColumnCount(4);
+    ui->cat->setColumnCount(4);                              //cat nom de table widget
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-
     db.setDatabaseName( "./innovativedb.db" );
 
     if( !db.open() )
@@ -89,8 +88,8 @@ roomsPerCat::roomsPerCat(QWidget *parent) :
 
     QTableWidgetItem * nameH = new QTableWidgetItem("Category");
     QTableWidgetItem * totalH = new QTableWidgetItem("Total");
-    QTableWidgetItem * emptyH = new QTableWidgetItem("Empty");
-    QTableWidgetItem * occupiedH = new QTableWidgetItem("Occupied");
+    QTableWidgetItem * emptyH = new QTableWidgetItem("Vide");
+    QTableWidgetItem * occupiedH = new QTableWidgetItem("Occuper");
     ui->cat->setHorizontalHeaderItem(0,nameH);
     ui->cat->setHorizontalHeaderItem(1,totalH);
     ui->cat->setHorizontalHeaderItem(2,emptyH);
