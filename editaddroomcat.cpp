@@ -50,11 +50,11 @@ void editAddRoomCat::on_okButton_clicked()
 
     QSqlQuery qry;
 
-    qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
+    /*qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
     if(!qry.exec())
       qDebug() << qry.lastError();
     else
-      qDebug( "Table Created!" );
+      qDebug( "Table Created!" );*/
 
     if(!qry.exec("SELECT id FROM roomcat"))
     {
