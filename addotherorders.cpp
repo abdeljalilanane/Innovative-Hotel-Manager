@@ -30,13 +30,13 @@ addOtherOrders::addOtherOrders(QWidget *parent) :
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-    /*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Room Table Validated..." );
-*/
+
     qry.prepare("SELECT roomno FROM roomlist WHERE occupied <> 0");
     if(!qry.exec())
         qDebug() << qry.lastError();
@@ -83,12 +83,12 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-    /*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );*/
+        qDebug( "Room Table Validated..." );
 
     qry.prepare("SELECT occupied FROM roomlist WHERE roomno=:room");
     qry.bindValue(":room",roomno);
@@ -103,12 +103,12 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
         guestID = qry.value(0).toString();
     }
     qDebug()<<guestID;
-   /*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS guestlist ( id INTEGET PRIMARY KEY, name VARCHAR(30),address VARCHAR(30), nationality VARCHAR(15), phone VARCHAR(15), occupation VARCHAR(15),purpose VARCHAR(20), occupant INTEGER, room VARCHAR(8), intime VARCHAR(30), outtime VARCHAR(30) )");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Table Created!" ); */
+        qDebug( "Table Created!" );
 
     qry.prepare("SELECT name FROM guestlist WHERE id=:guestID");
     qry.bindValue(":guestID",guestID);
@@ -150,12 +150,12 @@ void addOtherOrders::on_okButton_clicked()
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-   /* qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
+   qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Room Table Validated..." );
-*/
+
     qry.prepare("SELECT occupied FROM roomlist WHERE roomno=:room");
     qry.bindValue(":room",roomno);
     if(!qry.exec())
@@ -169,11 +169,11 @@ void addOtherOrders::on_okButton_clicked()
         guestID = qry.value(0).toString();
     }
 
-   /* qry.prepare("CREATE TABLE IF NOT EXISTS otherorders (id INTEGER PRIMARY KEY, time VARCHAR(30), text VARCHAR(40), price INTEGER, guestid INTEGER)");
+    qry.prepare("CREATE TABLE IF NOT EXISTS otherorders (id INTEGER PRIMARY KEY, time VARCHAR(30), text VARCHAR(40), price INTEGER, guestid INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );*/
+        qDebug( "Room Table Validated..." );
 
 
     int id=0;

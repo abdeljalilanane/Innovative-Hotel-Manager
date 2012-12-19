@@ -93,7 +93,8 @@ void mainWindow::setupview()
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-
+    QString MyAppDirPath =  QCoreApplication::applicationDirPath();
+QString CurrentDir = QDir::currentPath();
     db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
