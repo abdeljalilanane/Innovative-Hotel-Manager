@@ -94,8 +94,14 @@ void mainWindow::setupview()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 <<<<<<< HEAD
+<<<<<<< HEAD
     QString MyAppDirPath =  QCoreApplication::applicationDirPath();
+=======
+
+>>>>>>> v
 QString CurrentDir = QDir::currentPath();
+QString MyAppPath = QCoreApplication::applicationFilePath ();
+ui->label->setText(MyAppPath);
     db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 =======
 
@@ -108,7 +114,7 @@ QString CurrentDir = QDir::currentPath();
         qFatal( "Failed to connect." );
     }
 
-    qDebug( "Connected!" );
+    qDebug( "Connected!");
 
     QSqlQuery qry;
 
