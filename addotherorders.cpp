@@ -18,7 +18,7 @@ addOtherOrders::addOtherOrders(QWidget *parent) :
     ui->roomNo->addItem(":: select one ::");
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -70,7 +70,7 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -135,7 +135,7 @@ void addOtherOrders::on_okButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {

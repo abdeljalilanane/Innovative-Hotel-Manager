@@ -37,7 +37,7 @@ void billingManager::setupview()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -109,7 +109,7 @@ void billingManager::updatetable()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -365,7 +365,7 @@ void billingManager::on_payButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {

@@ -13,7 +13,7 @@ roomsPerCat::roomsPerCat(QWidget *parent) :
 
     ui->cat->setColumnCount(4);                              //cat nom de table widget
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
