@@ -34,7 +34,7 @@ void editRestaurant::setupview()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {

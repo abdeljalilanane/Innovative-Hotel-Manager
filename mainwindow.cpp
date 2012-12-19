@@ -93,9 +93,14 @@ void mainWindow::setupview()
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
+<<<<<<< HEAD
     QString MyAppDirPath =  QCoreApplication::applicationDirPath();
 QString CurrentDir = QDir::currentPath();
     db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+=======
+
+    db.setDatabaseName( "./hotel.sqlite" );
+>>>>>>> parent of 6e6b3c2... correction bdonner
 
     if( !db.open() )
     {

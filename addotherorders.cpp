@@ -16,10 +16,9 @@ addOtherOrders::addOtherOrders(QWidget *parent) :
     ui->price->setValidator(new QRegExpValidator(regExp2, this));
 
     ui->roomNo->addItem(":: select one ::");
-
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -72,7 +71,7 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -139,7 +138,7 @@ void addOtherOrders::on_okButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.sqlite" );
 
     if( !db.open() )
     {
