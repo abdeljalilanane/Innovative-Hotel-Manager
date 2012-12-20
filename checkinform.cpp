@@ -32,7 +32,7 @@ void checkInForm::setupview()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -87,7 +87,7 @@ void checkInForm::on_catList_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -163,7 +163,7 @@ void checkInForm::on_okButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {

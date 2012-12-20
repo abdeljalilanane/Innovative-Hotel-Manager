@@ -22,7 +22,7 @@ void editRoomCat::setupView()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -78,7 +78,7 @@ void editRoomCat::on_rmCat_clicked()
 
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./hotel.sqlite" );
+        db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
         if( !db.open() )
         {
@@ -144,7 +144,7 @@ void editRoomCat::on_catList_currentTextChanged()
         QString catStr = categoryItem->text();
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./hotel.sqlite" );
+        db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
         if( !db.open() )
         {

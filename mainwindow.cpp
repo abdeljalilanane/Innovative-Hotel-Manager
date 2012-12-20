@@ -93,20 +93,13 @@ void mainWindow::setupview()
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-<<<<<<< HEAD
-<<<<<<< HEAD
-    QString MyAppDirPath =  QCoreApplication::applicationDirPath();
-=======
+QString MyAppPath = QApplication::applicationDirPath();
 
->>>>>>> v
-QString CurrentDir = QDir::currentPath();
-QString MyAppPath = QCoreApplication::applicationFilePath ();
-ui->label->setText(MyAppPath);
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
-=======
+    db.setDatabaseName("./hotel.sqlite" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
->>>>>>> parent of 6e6b3c2... correction bdonner
+
+
+
 
     if( !db.open() )
     {

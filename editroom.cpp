@@ -24,7 +24,7 @@ void editRoom::setupview()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -74,7 +74,7 @@ void editRoom::on_addButton_clicked()
     QString nameStr= ui->catList->currentText();
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
     if( !db.open() )
     {
         qDebug() << db.lastError();
@@ -165,7 +165,7 @@ void editRoom::on_catList_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -232,7 +232,7 @@ void editRoom::on_removeButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.sqlite" );
+    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
     if( !db.open() )
     {
@@ -266,7 +266,7 @@ void editRoom::on_roomList_currentItemChanged()
         QString roomStr = roomItem->text();
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./hotel.sqlite" );
+        db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
 
         if( !db.open() )
         {
