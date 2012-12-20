@@ -53,7 +53,6 @@ FORMS    += mainwindow.ui \
     setting.ui
 
 RESOURCES += \
-    images.qrc \
-    basedonner.qrc
+    images.qrc
 
 OTHER_FILES +=

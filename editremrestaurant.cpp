@@ -11,7 +11,7 @@ editRemRestaurant::editRemRestaurant(QWidget *parent) :
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {
@@ -50,7 +50,7 @@ void editRemRestaurant::on_okButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {

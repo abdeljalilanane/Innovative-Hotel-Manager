@@ -32,7 +32,7 @@ void setting::on_ok_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( ".\hotel.db" );
 
     if( !db.open() )
     {

@@ -1,5 +1,0 @@
-<RCC>
-    <qresource prefix="/bd">
-        <file>hotel.sqlite</file>
-    </qresource>
-</RCC>

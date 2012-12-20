@@ -93,9 +93,11 @@ void mainWindow::setupview()
 
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-QString MyAppPath = QApplication::applicationDirPath();
 
-    db.setDatabaseName("./hotel.sqlite" );
+//QString MyAppPath = QApplication::applicationDirPath();
+
+    db.setDatabaseName(".\hotel.db" );
+
 
 
 
@@ -110,7 +112,6 @@ QString MyAppPath = QApplication::applicationDirPath();
     qDebug( "Connected!");
 
     QSqlQuery qry;
-
     qry.prepare("SELECT value FROM settings WHERE key = 'name'");
     if(!qry.exec())
       qDebug() << qry.lastError();

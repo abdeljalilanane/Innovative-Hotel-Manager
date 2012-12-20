@@ -3,7 +3,5 @@
         <file>img/largeIcon.png</file>
         <file>img/icon.png</file>
     </qresource>
-    <qresource prefix="/basedonner">
-        <file>hotel.sqlite</file>
-    </qresource>
+    <qresource prefix="/basedonner"/>
 </RCC>

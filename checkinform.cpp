@@ -32,7 +32,7 @@ void checkInForm::setupview()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {
@@ -43,7 +43,7 @@ void checkInForm::setupview()
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-    qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
+    qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGER PRIMARY KEY, item VARCHAR(30), price INTEGER)");
     if(!qry.exec())
       qDebug() << qry.lastError();
     else
@@ -87,7 +87,7 @@ void checkInForm::on_catList_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {
@@ -163,7 +163,7 @@ void checkInForm::on_okButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {

@@ -12,7 +12,7 @@ checkOutForm::checkOutForm(QWidget *parent) :
     ui->roomNo->addItem(":: select one ::");
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {
@@ -59,7 +59,7 @@ void checkOutForm::on_coButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {
@@ -134,7 +134,7 @@ void checkOutForm::on_payButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+    db.setDatabaseName( "./hotel.db" );
 
     if( !db.open() )
     {
@@ -229,7 +229,7 @@ void checkOutForm::updateShits()
 
      QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-     db.setDatabaseName( "/Users/Jaloul/Dropbox/Projet c++/Innovative-Hotel-Manager/hotel.sqlite" );
+     db.setDatabaseName( "./hotel.db" );
 
      if( !db.open() )
      {
