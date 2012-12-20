@@ -95,8 +95,8 @@ void mainWindow::setupview()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
-
+    db.setDatabaseName( "./innovativedb.sqlite" );
+    printf("hello");
 
     if( !db.open() )
     {

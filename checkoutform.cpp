@@ -13,7 +13,7 @@ checkOutForm::checkOutForm(QWidget *parent) :
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -62,7 +62,7 @@ void checkOutForm::on_coButton_clicked()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -138,7 +138,7 @@ void checkOutForm::on_payButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
     if( !db.open() )
     {
@@ -234,7 +234,7 @@ void checkOutForm::updateShits()
      QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-     db.setDatabaseName( "./innovativedb.db" );
+     db.setDatabaseName( "./innovativedb.sqlite" );
 
      if( !db.open() )
      {

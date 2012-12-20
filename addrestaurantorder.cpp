@@ -15,7 +15,7 @@ addRestaurantOrder::addRestaurantOrder(QWidget *parent) :
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -108,7 +108,7 @@ void addRestaurantOrder::on_roomNo_currentIndexChanged()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -205,7 +205,7 @@ void addRestaurantOrder::on_addButton_clicked()
    QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-   db.setDatabaseName( "./innovativedb.db" );
+   db.setDatabaseName( "./innovativedb.sqlite" );
 
 
    if( !db.open() )

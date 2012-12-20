@@ -12,7 +12,7 @@ editRemRestaurant::editRemRestaurant(QWidget *parent) :
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -53,7 +53,7 @@ void editRemRestaurant::on_okButton_clicked()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 if( !db.open() )
     {
         qDebug() << db.lastError();

@@ -33,7 +33,7 @@ void checkInForm::setupview()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
     if( !db.open() )
     {
@@ -89,7 +89,7 @@ void checkInForm::on_catList_currentIndexChanged()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -167,7 +167,7 @@ void checkInForm::on_okButton_clicked()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
     if( !db.open() )
     {

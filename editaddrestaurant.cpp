@@ -38,7 +38,7 @@ void editAddRestaurant::on_okButton_clicked()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )

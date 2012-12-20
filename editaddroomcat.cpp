@@ -40,7 +40,7 @@ void editAddRoomCat::on_okButton_clicked()
 
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )

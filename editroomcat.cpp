@@ -23,7 +23,7 @@ void editRoomCat::setupView()
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
-    db.setDatabaseName( "./innovativedb.db" );
+    db.setDatabaseName( "./innovativedb.sqlite" );
 
 
     if( !db.open() )
@@ -81,7 +81,7 @@ void editRoomCat::on_rmCat_clicked()
 
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./innovativedb.db" );
+        db.setDatabaseName( "./innovativedb.sqlite" );
 
 
         if( !db.open() )
@@ -148,7 +148,7 @@ void editRoomCat::on_catList_currentTextChanged()
         QString catStr = categoryItem->text();
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./innovativedb.db" );
+        db.setDatabaseName( "./innovativedb.sqlite" );
 
 
         if( !db.open() )
