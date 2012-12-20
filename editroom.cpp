@@ -24,7 +24,9 @@ void editRoom::setupview()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -35,13 +37,13 @@ void editRoom::setupview()
     qDebug( "Database Connection Validated..." );
 
     QSqlQuery qry;
-    /*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Room Category Table Validated..." );
-*/
+
     int j=0;
 
     if(!qry.exec("SELECT item FROM roomcat"))
@@ -75,7 +77,9 @@ void editRoom::on_addButton_clicked()
     QString nameStr= ui->catList->currentText();
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
     if( !db.open() )
     {
         qDebug() << db.lastError();
@@ -83,14 +87,14 @@ void editRoom::on_addButton_clicked()
     }
     qDebug( "Database Connection Validated..." );
     QSqlQuery qry;
-/*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Table Created!" );
 
-*/
+
     qry.prepare("SELECT id FROM roomcat WHERE item = :name");
     qry.bindValue(":name",nameStr);
     if(!qry.exec())
@@ -108,13 +112,13 @@ void editRoom::on_addButton_clicked()
     {
         qFatal("MAYDAY!!! DATABASE ERROR!!!");
     }
-/*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Room Table Validated..." );
-*/
+
     if(!qry.exec("SELECT id FROM roomlist"))
     {
         qDebug() << qry.lastError();
@@ -166,7 +170,9 @@ void editRoom::on_catList_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -177,13 +183,13 @@ void editRoom::on_catList_currentIndexChanged()
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-    /*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Table Created!" );
-*/
+
 
     qry.prepare("SELECT id FROM roomcat WHERE item = :name");
     qry.bindValue(":name",nameStr);
@@ -203,13 +209,13 @@ void editRoom::on_catList_currentIndexChanged()
     {
         qFatal("MAYDAY!!! DATABASE ERROR!!!");
     }
-/*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Room Table Validated..." );
-*/
+
     qry.prepare("SELECT roomno FROM roomlist WHERE cat = :item");
     qry.bindValue(":item",i);
     if(!qry.exec())
@@ -234,7 +240,9 @@ void editRoom::on_removeButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -268,7 +276,8 @@ void editRoom::on_roomList_currentItemChanged()
         QString roomStr = roomItem->text();
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./hotel.db" );
+
+        db.setDatabaseName( "./innovativedb.db" );
 
         if( !db.open() )
         {

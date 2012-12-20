@@ -19,7 +19,10 @@ addOtherOrders::addOtherOrders(QWidget *parent) :
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -72,7 +75,9 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -139,7 +144,9 @@ void addOtherOrders::on_okButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {

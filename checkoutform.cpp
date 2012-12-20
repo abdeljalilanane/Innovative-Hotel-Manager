@@ -12,7 +12,9 @@ checkOutForm::checkOutForm(QWidget *parent) :
     ui->roomNo->addItem(":: select one ::");
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -59,7 +61,9 @@ void checkOutForm::on_coButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -134,7 +138,7 @@ void checkOutForm::on_payButton_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+    db.setDatabaseName( "./innovativedb.db" );
 
     if( !db.open() )
     {
@@ -229,7 +233,8 @@ void checkOutForm::updateShits()
 
      QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-     db.setDatabaseName( "./hotel.db" );
+
+     db.setDatabaseName( "./innovativedb.db" );
 
      if( !db.open() )
      {

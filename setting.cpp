@@ -32,7 +32,9 @@ void setting::on_ok_clicked()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( ".\hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {

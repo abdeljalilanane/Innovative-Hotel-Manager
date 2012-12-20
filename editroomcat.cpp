@@ -22,7 +22,9 @@ void editRoomCat::setupView()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -33,13 +35,13 @@ void editRoomCat::setupView()
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-    /*
+
     qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
     if(!qry.exec())
       qDebug() << qry.lastError();
     else
       qDebug( "Table Created!" );
-*/
+
     int j=0;
 
     if(!qry.exec("SELECT item FROM roomcat"))
@@ -79,7 +81,8 @@ void editRoomCat::on_rmCat_clicked()
 
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./hotel.db" );
+        db.setDatabaseName( "./innovativedb.db" );
+
 
         if( !db.open() )
         {
@@ -91,12 +94,12 @@ void editRoomCat::on_rmCat_clicked()
 
         QSqlQuery qry;
 
-    /*    qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
+        qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
         if(!qry.exec())
             qDebug() << qry.lastError();
         else
             qDebug( "Table Created!" );
-*/
+
         qDebug() << nameStr;
         qry.prepare("SELECT id FROM roomcat WHERE item = :name");
         qry.bindValue(":name",nameStr);
@@ -145,7 +148,8 @@ void editRoomCat::on_catList_currentTextChanged()
         QString catStr = categoryItem->text();
         QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-        db.setDatabaseName( "./hotel.db" );
+        db.setDatabaseName( "./innovativedb.db" );
+
 
         if( !db.open() )
         {
@@ -157,13 +161,13 @@ void editRoomCat::on_catList_currentTextChanged()
 
         QSqlQuery qry;
 
-        /*
+
         qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGET PRIMARY KEY, item VARCHAR(30), price INTEGER)");
         if(!qry.exec())
           qDebug() << qry.lastError();
         else
           qDebug( "Table Created!" );
-*/
+
         qry.prepare("SELECT id FROM roomcat WHERE item = :name");
         qry.bindValue(":name",catStr);
         if(!qry.exec())

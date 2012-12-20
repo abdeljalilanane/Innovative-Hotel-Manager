@@ -94,13 +94,8 @@ void mainWindow::setupview()
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-//QString MyAppPath = QApplication::applicationDirPath();
 
-    db.setDatabaseName(".\hotel.db" );
-
-
-
-
+    db.setDatabaseName( "./innovativedb.db" );
 
 
     if( !db.open() )

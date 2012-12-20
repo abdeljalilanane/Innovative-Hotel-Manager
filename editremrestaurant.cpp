@@ -11,7 +11,9 @@ editRemRestaurant::editRemRestaurant(QWidget *parent) :
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
+
+    db.setDatabaseName( "./innovativedb.db" );
+
 
     if( !db.open() )
     {
@@ -50,9 +52,9 @@ void editRemRestaurant::on_okButton_clicked()
 {
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
-    db.setDatabaseName( "./hotel.db" );
 
-    if( !db.open() )
+    db.setDatabaseName( "./innovativedb.db" );
+if( !db.open() )
     {
         qDebug() << db.lastError();
         qFatal( "Failed to connect." );
