@@ -50,7 +50,8 @@ FORMS    += mainwindow.ui \
     editremrestaurant.ui \
     editaddroomcat.ui \
     checkinform.ui \
-    setting.ui
+    setting.ui \
+    dialog.ui
 
 RESOURCES += \
     images.qrc
