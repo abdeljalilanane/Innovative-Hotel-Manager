@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     editremrestaurant.cpp \
     editaddroomcat.cpp \
     checkinform.cpp \
-    setting.cpp
+    setting.cpp \
+    gestionperson.cpp
 
 HEADERS  += mainwindow.h \
     roomspercat.h \
@@ -35,7 +36,8 @@ HEADERS  += mainwindow.h \
     editremrestaurant.h \
     editaddroomcat.h \
     checkinform.h \
-    setting.h
+    setting.h \
+    gestionperson.h
 
 FORMS    += mainwindow.ui \
     roomspercat.ui \
@@ -51,7 +53,8 @@ FORMS    += mainwindow.ui \
     editaddroomcat.ui \
     checkinform.ui \
     setting.ui \
-    dialog.ui
+    dialog.ui \
+    gestionperson.ui
 
 RESOURCES += \
     images.qrc
