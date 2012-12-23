@@ -632,14 +632,14 @@ color: rgb(0, 85, 0)
           </widget>
          </item>
          <item>
-          <widget class="QCommandLinkButton" name="commandLinkButton_2">
+          <widget class="QCommandLinkButton" name="BtnAjouterReservation">
            <property name="text">
             <string>Ajouter Reservation</string>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QCommandLinkButton" name="commandLinkButton">
+          <widget class="QCommandLinkButton" name="BtnModifierReservation">
            <property name="text">
             <string>Modifier Reservation</string>
            </property>

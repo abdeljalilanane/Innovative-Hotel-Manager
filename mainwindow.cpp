@@ -10,6 +10,7 @@
 #include "editrestaurant.h"
 #include "billingmanager.h"
 #include "setting.h"
+#include "ajouterreservation.h"
 #include <QtSql>
 #include <QDebug>
 
@@ -96,7 +97,7 @@ void mainWindow::setupview()
 
 
     db.setDatabaseName( "./innovativedb.sqlite" );
-    printf("hello");
+
 
     if( !db.open() )
     {
@@ -151,4 +152,11 @@ void mainWindow::setupview()
 void mainWindow::setupviewS()
 {
     setupview();
+}
+
+void mainWindow::on_BtnAjouterReservation_clicked()
+{
+    InnAjRes = new AjouterReservation;
+    connect(InnAjRes,SIGNAL(finished(int)),this,SLOT(setupviewS()));
+    InnAjRes->show();
 }

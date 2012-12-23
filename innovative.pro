@@ -21,7 +21,7 @@ SOURCES += main.cpp\
     editaddroomcat.cpp \
     checkinform.cpp \
     setting.cpp \
-    gestionperson.cpp
+    ajouterreservation.cpp
 
 HEADERS  += mainwindow.h \
     roomspercat.h \
@@ -37,7 +37,7 @@ HEADERS  += mainwindow.h \
     editaddroomcat.h \
     checkinform.h \
     setting.h \
-    gestionperson.h
+    ajouterreservation.h
 
 FORMS    += mainwindow.ui \
     roomspercat.ui \
@@ -54,7 +54,7 @@ FORMS    += mainwindow.ui \
     checkinform.ui \
     setting.ui \
     dialog.ui \
-    gestionperson.ui
+    ajouterreservation.ui
 
 RESOURCES += \
     images.qrc

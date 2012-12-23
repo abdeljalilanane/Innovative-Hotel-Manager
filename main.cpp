@@ -5,8 +5,8 @@
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    //mainWindow w;
-    GestionPerson w;
+    mainWindow w;
+    //GestionPerson w;
 
     w.show();
 

@@ -11,7 +11,7 @@ addRestaurantOrder::addRestaurantOrder(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    ui->roomNo->addItem(":: select one ::");
+    ui->roomNo->addItem(":: Sélectionner un ::");
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
@@ -21,30 +21,30 @@ addRestaurantOrder::addRestaurantOrder(QWidget *parent) :
     if( !db.open() )
     {
         qDebug() << db.lastError();
-        qFatal( "Failed to connect." );
+        qFatal( "Échec de la connexion." );
     }
 
-    qDebug( "Connected!" );
+    qDebug( "Connecté!" );
 
     QSqlQuery qry;
     qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "RoomListe Table Cree..." );
 
     qry.prepare("SELECT roomno FROM roomlist WHERE occupied <> 0");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "roomno selectionner..." );
 
     while (qry.next()) {
         QString roomno = qry.value(0).toString();
         ui->roomNo->addItem(roomno);
     }
 
-    ui->item->addItem(":: select one ::");
+    ui->item->addItem(":: Sélectionner un ::");
 
     qry.prepare("CREATE TABLE IF NOT EXISTS restmenu (item VARCHAR(30),price INTEGER)");
     if(!qry.exec())
@@ -58,7 +58,7 @@ addRestaurantOrder::addRestaurantOrder(QWidget *parent) :
         qDebug() << qry.lastError();
     }
     else
-        qDebug( "Table Selected!" );
+        qDebug( "item Selected!" );
 
     while (qry.next()) {
         QString item = qry.value(0).toString();
@@ -92,7 +92,7 @@ void addRestaurantOrder::on_roomNo_currentIndexChanged()
     QString roomno = ui->roomNo->currentText();
     qDebug() << roomno;
 
-    if(roomno==":: select one ::")
+    if(roomno==":: Sélectionner un ::")
     {
         ui->item->setEnabled(0);
         ui->quantityBox->setEnabled(0);
@@ -114,24 +114,24 @@ void addRestaurantOrder::on_roomNo_currentIndexChanged()
     if( !db.open() )
     {
         qDebug() << db.lastError();
-        qFatal( "Failed to connect." );
+        qFatal( "Échec de la connexion." );
     }
 
-    qDebug( "Connected!" );
+    qDebug( "Connecté!" );
 
     QSqlQuery qry;
     qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "roomlist Table CREATE..." );
 
     qry.prepare("SELECT occupied FROM roomlist WHERE roomno=:room");
     qry.bindValue(":room",roomno);
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "occupied Table selectionner..." );
 
     QString guestID = "";
     while(qry.next())
@@ -143,7 +143,7 @@ void addRestaurantOrder::on_roomNo_currentIndexChanged()
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Table Created!" );
+        qDebug( "guestlist Table Created!" );
 
     qry.prepare("SELECT name FROM guestlist WHERE id=:guestID");
     qry.bindValue(":guestID",guestID);
@@ -153,7 +153,7 @@ void addRestaurantOrder::on_roomNo_currentIndexChanged()
        qDebug() << qry.lastError();
     }
     else
-        qDebug( "Table Selected!" );
+        qDebug( "name Selected!" );
 
     while (qry.next())
     {
@@ -168,7 +168,7 @@ void addRestaurantOrder::on_roomNo_currentIndexChanged()
     QString item = ui->item->currentText();
     qDebug() << item;
 
-    if(item==":: select one ::")
+    if(item==":: Sélectionner un ::")
     {
         ui->quantityBox->setEnabled(0);
         ui->quantitySlider->setEnabled(0);
@@ -182,7 +182,7 @@ void addRestaurantOrder::on_item_currentIndexChanged()
     QString item = ui->item->currentText();
     qDebug() << item;
 
-    if(item==":: select one ::")
+    if(item==":: Sélectionner un ::")
     {
         ui->quantityBox->setEnabled(0);
         ui->quantitySlider->setEnabled(0);
@@ -211,24 +211,24 @@ void addRestaurantOrder::on_addButton_clicked()
    if( !db.open() )
    {
        qDebug() << db.lastError();
-       qFatal( "Failed to connect." );
+       qFatal( "Échec de la connexion." );
    }
 
-   qDebug( "Connected!" );
+   qDebug( "Connecté!" );
 
    QSqlQuery qry;
    qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
    if(!qry.exec())
        qDebug() << qry.lastError();
    else
-       qDebug( "Room Table Validated..." );
+       qDebug( "roomlist Table Validated..." );
 
    qry.prepare("SELECT occupied FROM roomlist WHERE roomno=:room");
    qry.bindValue(":room",roomno);
    if(!qry.exec())
        qDebug() << qry.lastError();
    else
-       qDebug( "Room Table Validated..." );
+       qDebug( "occupied Table selectonner..." );
 
    QString guestID = "";
    while(qry.next())
@@ -242,7 +242,7 @@ void addRestaurantOrder::on_addButton_clicked()
    if(!qry.exec())
        qDebug() << qry.lastError();
    else
-       qDebug( "Room Table Validated..." );
+       qDebug( "price selected..." );
 
    int price = 0;
    while(qry.next())
@@ -256,7 +256,7 @@ void addRestaurantOrder::on_addButton_clicked()
    if(!qry.exec())
        qDebug() << qry.lastError();
    else
-       qDebug( "Table Created!" );
+       qDebug( "guestlist Table Created!" );
 
    qry.prepare("CREATE TABLE IF NOT EXISTS restorders (id INTEGET PRIMARY KEY, item VARCHAR(20), quantity INTEGER, price INTEGER, guestID INTEGER, time VARCHAR(20))");
    if(!qry.exec())

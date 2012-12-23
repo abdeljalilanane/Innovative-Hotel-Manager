@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>GestionPerson</class>
+ <class>mainWindow</class>
  <widget class="QMainWindow" name="mainWindow">
   <property name="geometry">
    <rect>
@@ -189,7 +189,7 @@ color: rgb(170, 0, 0)
            <item>
             <widget class="QLabel" name="label_4">
              <property name="text">
-              <string>&lt;b&gt;Nombre total de chambres&lt;/b&gt;</string>
+              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-weight:600;&quot;&gt;Nombre total de personnel&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
              </property>
             </widget>
            </item>

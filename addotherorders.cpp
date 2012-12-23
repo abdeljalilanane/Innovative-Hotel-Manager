@@ -27,10 +27,10 @@ addOtherOrders::addOtherOrders(QWidget *parent) :
     if( !db.open() )
     {
         qDebug() << db.lastError();
-        qFatal( "Failed to connect." );
+        qFatal( "Échec de la connexion." );
     }
 
-    qDebug( "Connected!" );
+    qDebug( "Connecté!" );
 
     QSqlQuery qry;
 
@@ -38,13 +38,13 @@ addOtherOrders::addOtherOrders(QWidget *parent) :
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Table room Validé ..." );
 
     qry.prepare("SELECT roomno FROM roomlist WHERE occupied <> 0");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Chambre no occupied selectionner" );
 
     while (qry.next()) {
         QString roomno = qry.value(0).toString();
@@ -64,7 +64,7 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
     QString roomno = ui->roomNo->currentText();
     qDebug() << roomno;
 
-    if(roomno==":: select one ::")
+    if(roomno==":: Sélectionner un ::")
     {
         ui->okButton->setEnabled(0);
         ui->name->setEnabled(0);
@@ -82,10 +82,10 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
     if( !db.open() )
     {
         qDebug() << db.lastError();
-        qFatal( "Failed to connect." );
+        qFatal( "Échec de la connexion." );
     }
 
-    qDebug( "Connected!" );
+    qDebug( "Connecté!" );
 
     QSqlQuery qry;
 
@@ -100,7 +100,7 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Chambre occupied selectionner" );
 
     QString guestID = "";
     while(qry.next())
@@ -113,7 +113,7 @@ void addOtherOrders::on_roomNo_currentIndexChanged()
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Table Created!" );
+        qDebug( "Table créé!" );
 
     qry.prepare("SELECT name FROM guestlist WHERE id=:guestID");
     qry.bindValue(":guestID",guestID);
@@ -151,24 +151,24 @@ void addOtherOrders::on_okButton_clicked()
     if( !db.open() )
     {
         qDebug() << db.lastError();
-        qFatal( "Failed to connect." );
+        qFatal( "Échec de la connexion." );
     }
 
-    qDebug( "Connected!" );
+    qDebug( "Connecté!" );
 
     QSqlQuery qry;
    qry.prepare("CREATE TABLE IF NOT EXISTS roomlist (id INTEGET PRIMARY KEY, roomno VARCHAR(5), cat INTEGER, occupied INTEGER)");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Room Table Cree..." );
 
     qry.prepare("SELECT occupied FROM roomlist WHERE roomno=:room");
     qry.bindValue(":room",roomno);
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Room occupied selectionee..." );
 
     QString guestID = "";
     while(qry.next())
@@ -180,7 +180,7 @@ void addOtherOrders::on_okButton_clicked()
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Room Table Cree..." );
 
 
     int id=0;
@@ -212,7 +212,7 @@ void addOtherOrders::on_okButton_clicked()
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
-        qDebug( "Room Table Validated..." );
+        qDebug( "Otherorders cree..." );
 
 
     this->close();
