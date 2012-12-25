@@ -1,7 +1,7 @@
 #include "login.h"
 #include "ui_login.h"
 #include "mainwindow.h"
-
+#include "usermanager.h"
 
 login::login(QWidget *parent) :
     QDialog(parent),
@@ -22,12 +22,39 @@ void login::on_ok_clik()
     QString login = ui->loginT->text();
     QString pass = ui->passwordT->text();
 
+/*
+    //conex DB
+    QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
+
+
+    db.setDatabaseName( "./innovativedb.sqlite" );
+
+    if( !db.open() )
+    {
+        qDebug() << db.lastError();
+        qFatal( "Failed to connect." );
+    }
+
+    qDebug( "Connected!" );
+
+    QSqlQuery qry;
+    qry.prepare("CREATE TABLE IF NOT EXISTS agent (id INTEGER PRIMARY KEY, item VARCHAR(30), price INTEGER)");
+    if(!qry.exec())
+      qDebug() << qry.lastError();
+    else
+      qDebug( "Table Created!" ); */
+
+
     if ((login=="root")&&(pass=="pass"))
     {
-        mainWindow *w=new mainWindow;
-        w->show();
+        //mainWindow *w=new mainWindow;
+        //w->show();
+
+        userManager *u=new userManager;
+        u->show();
         this->setVisible(false);
      }
+
 
 
 }
