@@ -23,7 +23,7 @@ void login::on_ok_clik()
     QString login = ui->loginT->text();
     QString pass = ui->passwordT->text();
 
-/*
+
     //conex DB
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
@@ -45,12 +45,9 @@ void login::on_ok_clik()
     else
       qDebug( "Table Created!" );
 
-*/
+
     if ((login=="root")&&(pass=="pass"))
     {
-        //mainWindow *w=new mainWindow;
-        //w->show();
-
         userManager *u=new userManager;
         u->show();
         this->setVisible(false);
