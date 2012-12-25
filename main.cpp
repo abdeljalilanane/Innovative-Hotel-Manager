@@ -1,14 +1,11 @@
 #include <QtGui/QApplication>
 #include "mainwindow.h"
-#include"gestionperson.h"
+#include "login.h"
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    mainWindow w;
-    //GestionPerson w;
-
-    w.show();
-
+    login l;
+    l.show();
     return a.exec();
 }
