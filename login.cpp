@@ -1,3 +1,4 @@
+#include <QtSql>
 #include "login.h"
 #include "ui_login.h"
 #include "mainwindow.h"
@@ -38,13 +39,13 @@ void login::on_ok_clik()
     qDebug( "Connected!" );
 
     QSqlQuery qry;
-    qry.prepare("CREATE TABLE IF NOT EXISTS agent (id INTEGER PRIMARY KEY, item VARCHAR(30), price INTEGER)");
+    qry.prepare("CREATE TABLE IF NOT EXISTS agent (id INTEGER PRIMARY KEY, user VARCHAR(30), pass VARCHAR(30))");
     if(!qry.exec())
       qDebug() << qry.lastError();
     else
-      qDebug( "Table Created!" ); */
+      qDebug( "Table Created!" );
 
-
+*/
     if ((login=="root")&&(pass=="pass"))
     {
         //mainWindow *w=new mainWindow;
