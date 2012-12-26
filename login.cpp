@@ -20,8 +20,8 @@ login::~login()
 
 void login::on_ok_clik()
 {
-    QString login = ui->loginT->text();
-    QString pass = ui->passwordT->text();
+    QString loginT = ui->loginT->text();
+    QString passwordT = ui->passwordT->text();
 
 
     //conex DB
@@ -43,14 +43,54 @@ void login::on_ok_clik()
     if(!qry.exec())
       qDebug() << qry.lastError();
     else
-      qDebug( "Table Created!" );
+      {qDebug( "Table Created!" );
+
+        qry.prepare("INSERT INTO agent (id,user,pass) VALUES (:id,:user,:pass)");
+        qry.bindValue(":id",1);
+        qry.bindValue(":user","root");
+        qry.bindValue(":pass","root");
+
+        if(!qry.exec())
+             qDebug() << qry.lastError();
+        else
+             qDebug( "root root!" );
+    }
+    QSqlQuery req;
+    QString user="";
+    QString pass="";
+    req.prepare("SELECT * FROM agent");
+        if( !req.exec() )
+        {
+
+            qDebug() << qry.lastError();
+        }
+        else
+        { qDebug("select agent login");
+            while(req.next())//pour avancer les lignes
+            {
+                user=req.value(1).toString();
+                pass=req.value(2).toString();
 
 
-    if ((login=="root")&&(pass=="pass"))
+             }
+        }
+
+
+    if ((loginT==user)&&(passwordT==pass))
     {
-        userManager *u=new userManager;
-        u->show();
-        this->setVisible(false);
+        if(user=="root")
+        {
+            userManager *u=new userManager;
+            u->show();
+            this->setVisible(false);
+        }
+        else
+        {
+            mainWindow * u=new mainWindow;
+            u->show();
+            this->setVisible(false);
+        }
+
      }
 
 

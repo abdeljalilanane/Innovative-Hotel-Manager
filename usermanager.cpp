@@ -32,23 +32,7 @@ void userManager::setupview()
 
     qDebug( "Connected!" );
 
-    QSqlQuery qry;
-    qry.prepare("CREATE TABLE IF NOT EXISTS agent (id INTEGER PRIMARY KEY, user VARCHAR(30), pass VARCHAR(30))");
-    if(!qry.exec())
-      qDebug() << qry.lastError();
-    else
-      {qDebug( "Table Created!" );
 
-        qry.prepare("INSERT INTO agent (id,user,pass) VALUES (:id,:user,:pass)");
-        qry.bindValue(":id",1);
-        qry.bindValue(":user","root");
-        qry.bindValue(":pass","root");
-
-        if(!qry.exec())
-             qDebug() << qry.lastError();
-        else
-             qDebug( "root root!" );
-    }
    int i=0;
 
     QSqlQuery req;
@@ -56,18 +40,18 @@ void userManager::setupview()
         if( !req.exec() )
         {
 
-            qDebug() << qry.lastError();
+            //qDebug() << qry.lastError();
         }
         else
-        { qDebug("done1");
+        { qDebug("liste agent trouve");
 
-            ui->agentlist->setRowCount(2);
+            ui->agentlist->setRowCount(0);
             while(req.next())//pour avancer les lignes
             {
+                 ui->agentlist->setRowCount(i+1);
 
-
-               QString user=req.value(0).toString();
-               QString pass=req.value(1).toString();
+               QString user=req.value(1).toString();
+               QString pass=req.value(2).toString();
 
 
                ui->agentlist->setItem(i,0,new QTableWidgetItem(user));
@@ -82,30 +66,7 @@ void userManager::setupview()
 
 void userManager::on_ajout_clicked()
 {
-    QSqlQuery qry;
 
-    int j=0;
-
-    if(!qry.exec("SELECT * FROM agent"))
-    {
-        qDebug() << qry.lastError();
-    }
-    else
-        qDebug( "Table Selected!" );
-
-
-
-    while (qry.next()) {
-        QString user = qry.value(0).toString();
-        QString pass = qry.value(1).toString();
-
-        ui->agentlist->setItem(j,0,new QTableWidgetItem(user));
-        ui->agentlist->setItem(j,1,new QTableWidgetItem(pass));
-
-        qDebug() << user,pass;
-        j++;
-
-    }
 }
 
 
