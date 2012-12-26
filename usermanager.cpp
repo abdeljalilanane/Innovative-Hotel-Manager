@@ -51,7 +51,7 @@ void userManager::setupview()
         else
         { qDebug("done1");
 
-            ui->agentlist->setRowCount(0);
+            ui->agentlist->setRowCount(2);
             while(req.next())//pour avancer les lignes
             {
                 ui->agentlist->setRowCount(i+1);
@@ -84,7 +84,7 @@ void userManager::on_ajout_clicked()
         qDebug( "Table Selected!" );
 
 
-    ui->agentlist->clear();
+
     while (qry.next()) {
         QString user = qry.value(0).toString();
         QString pass = qry.value(1).toString();
@@ -97,3 +97,15 @@ void userManager::on_ajout_clicked()
 
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+

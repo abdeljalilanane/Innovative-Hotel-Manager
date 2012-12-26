@@ -74,6 +74,16 @@
      <height>192</height>
     </rect>
    </property>
+   <column>
+    <property name="text">
+     <string>New Column</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>pass</string>
+    </property>
+   </column>
   </widget>
  </widget>
  <resources/>
