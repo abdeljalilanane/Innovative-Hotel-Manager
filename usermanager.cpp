@@ -69,3 +69,31 @@ void userManager::setupview()
         }
 
 }
+
+void userManager::on_ajout_clicked()
+{
+    QSqlQuery qry;
+
+    int j=0;
+
+    if(!qry.exec("SELECT * FROM agent"))
+    {
+        qDebug() << qry.lastError();
+    }
+    else
+        qDebug( "Table Selected!" );
+
+
+    ui->agentlist->clear();
+    while (qry.next()) {
+        QString user = qry.value(0).toString();
+        QString pass = qry.value(1).toString();
+
+        ui->agentlist->setItem(j,0,new QTableWidgetItem(user));
+        ui->agentlist->setItem(j,1,new QTableWidgetItem(pass));
+
+        qDebug() << user,pass;
+        j++;
+
+    }
+}
