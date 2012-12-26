@@ -58,7 +58,9 @@ void login::on_ok_clik()
     QSqlQuery req;
     QString user="";
     QString pass="";
-    req.prepare("SELECT * FROM agent");
+    req.prepare("SELECT * FROM agent where user = :user and pass = :pass");
+    req.bindValue(":user",loginT);
+    req.bindValue(":pass",passwordT);
         if( !req.exec() )
         {
 
