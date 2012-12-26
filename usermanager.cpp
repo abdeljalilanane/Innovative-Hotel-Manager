@@ -66,17 +66,5 @@ void userManager::setupview()
 
 void userManager::on_ajout_clicked()
 {
-
+    ui->agentlist->setRowCount(ui->agentlist->rowCount()+1);
 }
-
-
-
-
-
-
-
-
-
-
-
-
