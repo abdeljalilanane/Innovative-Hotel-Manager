@@ -76,7 +76,7 @@
    </property>
    <column>
     <property name="text">
-     <string>New Column</string>
+     <string>login</string>
     </property>
    </column>
    <column>

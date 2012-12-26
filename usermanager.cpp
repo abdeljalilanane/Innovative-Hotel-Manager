@@ -37,8 +37,18 @@ void userManager::setupview()
     if(!qry.exec())
       qDebug() << qry.lastError();
     else
-      qDebug( "Table Created!" );
+      {qDebug( "Table Created!" );
 
+        qry.prepare("INSERT INTO agent (id,user,pass) VALUES (:id,:user,:pass)");
+        qry.bindValue(":id",1);
+        qry.bindValue(":user","root");
+        qry.bindValue(":pass","root");
+
+        if(!qry.exec())
+             qDebug() << qry.lastError();
+        else
+             qDebug( "root root!" );
+    }
    int i=0;
 
     QSqlQuery req;
@@ -54,7 +64,7 @@ void userManager::setupview()
             ui->agentlist->setRowCount(2);
             while(req.next())//pour avancer les lignes
             {
-                ui->agentlist->setRowCount(i+1);
+
 
                QString user=req.value(0).toString();
                QString pass=req.value(1).toString();
