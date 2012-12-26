@@ -3,7 +3,7 @@
 #include "ui_login.h"
 #include "mainwindow.h"
 #include "usermanager.h"
-
+QString loginT;
 login::login(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::login)
@@ -17,10 +17,13 @@ login::~login()
 {
     delete ui;
 }
+QString login::getNom(){
+    return loginT;
+}
 
 void login::on_ok_clik()
 {
-    QString loginT = ui->loginT->text();
+    loginT = ui->loginT->text();
     QString passwordT = ui->passwordT->text();
 
 

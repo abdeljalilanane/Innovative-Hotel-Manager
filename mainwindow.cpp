@@ -10,6 +10,7 @@
 #include "editrestaurant.h"
 #include "billingmanager.h"
 #include "setting.h"
+#include "login.h"
 #include "ajouterreservation.h"
 #include <QtSql>
 #include <QDebug>
@@ -91,8 +92,10 @@ void mainWindow::on_button10_clicked()
 
 void mainWindow::setupview()
 {
+    login *log=new login();
 
 
+    ui->label_10->setText("Directeur de l\'Hotel :"+log->getNom());
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 

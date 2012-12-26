@@ -13,6 +13,7 @@ class login : public QDialog
     
 public:
     explicit login(QWidget *parent = 0);
+    QString getNom();
     ~login();
     
 private:
