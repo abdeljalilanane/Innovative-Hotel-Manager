@@ -14,7 +14,15 @@ class AjouterReservation : public QDialog
 public:
     explicit AjouterReservation(QWidget *parent = 0);
     ~AjouterReservation();
+    void setupview();
     
+private slots:
+    void on_okButton_clicked();
+
+    void on_catList_currentIndexChanged(const QString &arg1);
+
+    void on_roomList_currentIndexChanged(int index);
+
 private:
     Ui::AjouterReservation *ui;
 };
