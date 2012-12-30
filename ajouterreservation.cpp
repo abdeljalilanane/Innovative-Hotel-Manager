@@ -12,7 +12,7 @@ AjouterReservation::AjouterReservation(QWidget *parent) :
     QRegExp regExp1("[A-Za-z][A-Za-z ]*[A-Za-z0-9]*");
     ui->nameText->setValidator(new QRegExpValidator(regExp1, this));
 
-    QRegExp regExp2("[1-9][0-9]*[0-9]*");
+    QRegExp regExp2("[0-9][0-9]*[0-9]*");
     ui->phone->setValidator(new QRegExpValidator(regExp2, this));
 
 
@@ -23,6 +23,10 @@ AjouterReservation::AjouterReservation(QWidget *parent) :
 
 void AjouterReservation::setupview()
 {
+    QDate QDTime = QDate::currentDate();
+    ui->dateEditArive->setDate(QDTime);
+    QDate QDTime2 = QDate::currentDate();
+    ui->dateEditDepart->setDate(QDTime2.addDays(1));
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
 
@@ -74,7 +78,7 @@ AjouterReservation::~AjouterReservation()
 void AjouterReservation::on_okButton_clicked()
 {
     QString name = ui->nameText->text();
-    QString address = ui->CINText->text();
+    QString cin = ui->CINText->text();
 
     QString phone = ui->phone->text();
 
@@ -83,12 +87,13 @@ void AjouterReservation::on_okButton_clicked()
     QString cat = ui->catList->currentText();
     QString room = ui->roomList->currentText();
 
-    QDateTime QDTime = QDateTime::currentDateTime();
-    QString QDTStr = QDTime.toString();
+    //QDateTime QDTime = QDateTime::currentDateTime();
+    QString QDTStr = ui->dateEditArive->date().toString();
+    QString QDTStr2 = ui->dateEditDepart->date().toString();
 
     int id=0;
 
-    qDebug() << name << address << phone  << cat << room;
+    qDebug() << name << cin << phone  << cat << room;
 
     QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
 
@@ -125,13 +130,13 @@ void AjouterReservation::on_okButton_clicked()
     }
     qDebug() << price;
 
-    qry.prepare("CREATE TABLE IF NOT EXISTS guestlist ( id INTEGET PRIMARY KEY, name VARCHAR(30),address VARCHAR(30), nationality VARCHAR(15), phone VARCHAR(15), occupation VARCHAR(15),purpose VARCHAR(20), occupant INTEGER, room VARCHAR(8), intime VARCHAR(30), outtime VARCHAR(30) )");
+    qry.prepare("CREATE TABLE IF NOT EXISTS resvlist ( id INTEGET PRIMARY KEY AUTO_INCREMENT, name VARCHAR(30),cin VARCHAR(8), phone VARCHAR(15), room VARCHAR(8), intime VARCHAR(30), outtime VARCHAR(30) )");
     if(!qry.exec())
         qDebug() << qry.lastError();
     else
         qDebug( "Table Created!" );
 
-    if(!qry.exec("SELECT id FROM guestlist"))
+    if(!qry.exec("SELECT id FROM resvlist"))
     {
        qDebug() << qry.lastError();
     }
@@ -146,17 +151,14 @@ void AjouterReservation::on_okButton_clicked()
     }
     id++;
 
-  qry.prepare("INSERT INTO guestlist (id,name,address,nationality,phone,occupation,purpose,occupant,room,intime, outtime) VALUES (:id,:name,:address,:nationality,:phone,:occupation,:purpose,:occupant,:room,:time,'0')");
-  qry.bindValue(":id",id);
+  qry.prepare("INSERT INTO resvlist (id,name,cin,phone,room,intime, outtime) VALUES (:id,:name,:cin,:phone,:room,:time,:time2)");
+    qry.bindValue(":id",id);
   qry.bindValue(":name",name);
-  qry.bindValue(":address",address);
-  qry.bindValue(":nationality",nationality);
+  qry.bindValue(":cin",cin);
   qry.bindValue(":phone",phone);
-  qry.bindValue(":occupation",occupation);
-  qry.bindValue(":purpose",purpose);
-  qry.bindValue(":occupant",occupant);
   qry.bindValue(":room",room);
   qry.bindValue(":time",QDTStr);
+  qry.bindValue(":time2",QDTStr2);
   if(!qry.exec())
        qDebug() << qry.lastError();
   else
@@ -249,4 +251,10 @@ void AjouterReservation::on_roomList_currentIndexChanged(int index)
 {
     ui->okButton->setEnabled((ui->nameText->hasAcceptableInput())&&(ui->phone->hasAcceptableInput())&&(ui->CINText->hasAcceptableInput()));
 
+}
+
+void AjouterReservation::on_dateEditArive_dateChanged()
+{
+
+    ui->dateEditDepart->setDate(ui->dateEditArive->date().addDays(1));
 }

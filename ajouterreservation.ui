@@ -7,17 +7,63 @@
     <x>0</x>
     <y>0</y>
     <width>348</width>
-    <height>298</height>
+    <height>375</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Check-in Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0" colspan="2">
-    <widget class="QLabel" name="label">
+   <item row="4" column="2">
+    <widget class="QLineEdit" name="phone"/>
+   </item>
+   <item row="5" column="2">
+    <widget class="QComboBox" name="catList">
+     <property name="minimumSize">
+      <size>
+       <width>0</width>
+       <height>0</height>
+      </size>
+     </property>
+     <item>
+      <property name="text">
+       <string>.: select one :.</string>
+      </property>
+     </item>
+    </widget>
+   </item>
+   <item row="7" column="0">
+    <widget class="QLabel" name="label_4">
      <property name="text">
-      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reservation forme&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      <string>Date arrive</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="label_9">
+     <property name="text">
+      <string>catégorie</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="label_2">
+     <property name="text">
+      <string>Name</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="label_10">
+     <property name="text">
+      <string>No Chambre</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="0" colspan="3">
+    <widget class="Line" name="line_3">
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
      </property>
     </widget>
    </item>
@@ -28,10 +74,14 @@
      </property>
     </widget>
    </item>
-   <item row="2" column="2">
-    <widget class="QLineEdit" name="nameText"/>
+   <item row="4" column="0">
+    <widget class="QLabel" name="label_5">
+     <property name="text">
+      <string>Phone</string>
+     </property>
+    </widget>
    </item>
-   <item row="9" column="0" colspan="3">
+   <item row="13" column="0" colspan="3">
     <layout class="QHBoxLayout" name="horizontalLayout">
      <item>
       <spacer name="horizontalSpacer">
@@ -58,38 +108,39 @@
      </item>
     </layout>
    </item>
-   <item row="5" column="0">
-    <widget class="QLabel" name="label_9">
+   <item row="3" column="0">
+    <widget class="QLabel" name="label_3">
      <property name="text">
-      <string>catégorie</string>
+      <string>CIN</string>
      </property>
     </widget>
    </item>
-   <item row="3" column="2">
-    <widget class="QLineEdit" name="CINText"/>
-   </item>
-   <item row="7" column="0" colspan="3">
-    <widget class="Line" name="line_3">
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-    </widget>
-   </item>
-   <item row="6" column="0">
-    <widget class="QLabel" name="label_10">
+   <item row="8" column="0">
+    <widget class="QLabel" name="label_6">
      <property name="text">
-      <string>No Chambre</string>
+      <string>Date deppare</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="label_2">
+   <item row="7" column="2">
+    <widget class="QDateEdit" name="dateEditArive">
+     <property name="date">
+      <date>
+       <year>2013</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="0" colspan="2">
+    <widget class="QLabel" name="label">
      <property name="text">
-      <string>Name</string>
+      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Reservation forme&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
      </property>
     </widget>
    </item>
-   <item row="8" column="0" colspan="3">
+   <item row="12" column="0" colspan="3">
     <spacer name="verticalSpacer">
      <property name="orientation">
       <enum>Qt::Vertical</enum>
@@ -102,42 +153,27 @@
      </property>
     </spacer>
    </item>
-   <item row="5" column="2">
-    <widget class="QComboBox" name="catList">
-     <property name="minimumSize">
-      <size>
-       <width>0</width>
-       <height>0</height>
-      </size>
-     </property>
-     <item>
-      <property name="text">
-       <string>.: select one :.</string>
-      </property>
-     </item>
-    </widget>
-   </item>
-   <item row="4" column="0">
-    <widget class="QLabel" name="label_5">
-     <property name="text">
-      <string>Phone</string>
-     </property>
-    </widget>
-   </item>
-   <item row="4" column="2">
-    <widget class="QLineEdit" name="phone"/>
-   </item>
-   <item row="3" column="0">
-    <widget class="QLabel" name="label_3">
-     <property name="text">
-      <string>CIN</string>
-     </property>
-    </widget>
+   <item row="3" column="2">
+    <widget class="QLineEdit" name="CINText"/>
    </item>
    <item row="6" column="2">
     <widget class="QComboBox" name="roomList">
      <property name="enabled">
       <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="2">
+    <widget class="QLineEdit" name="nameText"/>
+   </item>
+   <item row="8" column="2">
+    <widget class="QDateEdit" name="dateEditDepart">
+     <property name="date">
+      <date>
+       <year>2014</year>
+       <month>1</month>
+       <day>1</day>
+      </date>
      </property>
     </widget>
    </item>

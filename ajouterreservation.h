@@ -23,6 +23,8 @@ private slots:
 
     void on_roomList_currentIndexChanged(int index);
 
+    void on_dateEditArive_dateChanged();
+
 private:
     Ui::AjouterReservation *ui;
 };
