@@ -10,23 +10,8 @@ ListeReserv::ListeReserv(QWidget *parent) :
     ui(new Ui::ListeReserv)
 {
     ui->setupUi(this);
-    ListeReservation();
-    QTableWidgetItem * ID = new QTableWidgetItem("ID");
-    QTableWidgetItem * NAME = new QTableWidgetItem("NOM");
-    QTableWidgetItem * CIN = new QTableWidgetItem("CIN");
-    QTableWidgetItem * PHONE = new QTableWidgetItem("PHONE");
-    QTableWidgetItem * ROOM = new QTableWidgetItem("ROOM");
-    QTableWidgetItem * INTTIME = new QTableWidgetItem("INTIME");
-    QTableWidgetItem * OUTTIME = new QTableWidgetItem("OUTTIME");
-
-    ui->catList->setHorizontalHeaderItem(0,ID);
-    ui->catList->setHorizontalHeaderItem(1,NAME);
-    ui->catList->setHorizontalHeaderItem(2,CIN);
-    ui->catList->setHorizontalHeaderItem(3,PHONE);
-    ui->catList->setHorizontalHeaderItem(4,ROOM);
-    ui->catList->setHorizontalHeaderItem(5,INTTIME);
-    ui->catList->setHorizontalHeaderItem(6,OUTTIME);
-    ui->catList->setSortingEnabled(1);
+    //setupview();
+   ListeReservation();
 }
 
 ListeReserv::~ListeReserv()

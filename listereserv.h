@@ -13,6 +13,7 @@ class ListeReserv : public QDialog
     
 public:
     explicit ListeReserv(QWidget *parent = 0);
+    void setupview();
     void ListeReservation();
     ~ListeReserv();
     
