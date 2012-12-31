@@ -3,6 +3,7 @@
 #include <QtSql>
 #include <QDebug>
 #include <QDateTime>
+#include <QCompleter>
 
 checkInForm::checkInForm(QWidget *parent) :
     QDialog(parent),
@@ -20,6 +21,9 @@ checkInForm::checkInForm(QWidget *parent) :
     ui->addText->setValidator(new QRegExpValidator(regExp3, this));
 
     setupview();
+
+
+
 
 }
 
@@ -42,6 +46,37 @@ void checkInForm::setupview()
     }
 
     qDebug( "Connected!" );
+
+
+
+     QSqlQuery qry1;
+     if(!qry1.exec("SELECT cin FROM `resvlist`"))
+     {
+         qDebug() << qry1.lastError();
+     }
+     else
+         qDebug( "Table Selected!" );
+     QStringList wordList;
+
+
+     while (qry1.next()) {
+         QString item = qry1.value(0).toString();
+        wordList << item;
+
+
+         qDebug() << wordList;
+
+
+     }
+
+
+
+      //QLineEdit *lineEdit = new QLineEdit(this);
+
+      QCompleter *completer = new QCompleter(wordList, this);
+      completer->setCaseSensitivity(Qt::CaseInsensitive);
+      ui->LinCIN->setCompleter(completer);
+
 
     QSqlQuery qry;
     qry.prepare("CREATE TABLE IF NOT EXISTS roomcat (id INTEGER PRIMARY KEY, item VARCHAR(30), price INTEGER)");
@@ -254,3 +289,65 @@ void checkInForm::on_roomList_currentIndexChanged()
     ui->okButton->setEnabled((ui->nameText->hasAcceptableInput())&&(ui->phone->hasAcceptableInput())&&(ui->addText->hasAcceptableInput()));
 }
 
+
+void checkInForm::on_LinCIN_returnPressed()
+{
+    QString Name;
+    QString cin;
+    QString phone;
+    QString cat;
+    QString NoChom;
+    QString data;
+    QString datfep;
+
+    QSqlDatabase db = QSqlDatabase::addDatabase( "QSQLITE" );
+
+
+    db.setDatabaseName( "./innovativedb.sqlite" );
+
+
+    if( !db.open() )
+    {
+        qDebug() << db.lastError();
+        qFatal( "Failed to connect." );
+    }
+
+    qDebug( "Connected!" );
+
+    QSqlQuery qry;
+    if(!qry.exec("SELECT * FROM `resvlist` where cin='"+ui->LinCIN->text()+"'"))
+    {
+        qDebug() << qry.lastError();
+    }
+    else
+        qDebug( "Table Selected!" );
+
+    while (qry.next()) {
+        Name=qry.value(1).toString();
+        cin=qry.value(2).toString();
+        phone=qry.value(3).toString();
+        NoChom=qry.value(4).toString();
+        data=qry.value(5).toString();
+        datfep=qry.value(6).toString();
+
+
+
+    }
+    ui->nameText->setText(Name);
+    ui->phone->setText(phone);
+    ui->roomList->clear();
+    ui->roomList->addItem(NoChom);
+    ui->catList->setEnabled(0);
+    /*ui->->setText();
+    ui->->setText();
+    ui->->setText();*/
+
+
+
+}
+
+void checkInForm::on_occupant_editingFinished()
+{
+    ui->okButton->setEnabled((ui->nameText->hasAcceptableInput())&&(ui->phone->hasAcceptableInput())&&(ui->addText->hasAcceptableInput()));
+
+}

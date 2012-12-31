@@ -25,6 +25,9 @@ public slots:
     void on_roomList_currentIndexChanged();
 
 
+private slots:
+    void on_LinCIN_returnPressed();
+    void on_occupant_editingFinished();
 };
 
 #endif // CHECKINFORM_H
