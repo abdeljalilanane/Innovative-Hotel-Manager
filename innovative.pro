@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     setting.cpp \
     ajouterreservation.cpp \
     login.cpp \
-    usermanager.cpp
+    usermanager.cpp \
+    listereserv.cpp
 
 HEADERS  += mainwindow.h \
     roomspercat.h \
@@ -41,7 +42,8 @@ HEADERS  += mainwindow.h \
     setting.h \
     ajouterreservation.h \
     login.h \
-    usermanager.h
+    usermanager.h \
+    listereserv.h
 
 FORMS    += mainwindow.ui \
     roomspercat.ui \
@@ -60,7 +62,8 @@ FORMS    += mainwindow.ui \
     dialog.ui \
     ajouterreservation.ui \
     login.ui \
-    usermanager.ui
+    usermanager.ui \
+    listereserv.ui
 
 RESOURCES += \
     images.qrc

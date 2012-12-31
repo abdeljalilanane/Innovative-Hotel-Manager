@@ -12,6 +12,7 @@
 #include "setting.h"
 #include "login.h"
 #include "ajouterreservation.h"
+#include "listereserv.h"
 #include <QtSql>
 #include <QDebug>
 
@@ -162,4 +163,11 @@ void mainWindow::on_BtnAjouterReservation_clicked()
     InnAjRes = new AjouterReservation;
     connect(InnAjRes,SIGNAL(finished(int)),this,SLOT(setupviewS()));
     InnAjRes->show();
+}
+
+void mainWindow::on_BtnListeReservation_clicked()
+{
+    InnLIRes = new ListeReserv;
+    connect(InnLIRes,SIGNAL(finished(int)),this,SLOT(setupviewS()));
+    InnLIRes->show();
 }

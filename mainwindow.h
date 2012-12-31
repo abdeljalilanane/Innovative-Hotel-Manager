@@ -17,6 +17,7 @@ class editRestaurant;
 class billingManager;
 class setting;
 class AjouterReservation;
+class ListeReserv;
 class mainWindow : public QMainWindow
 {
     Q_OBJECT
@@ -39,6 +40,8 @@ private:
     billingManager *InnObill;
     setting *InnOset;
     AjouterReservation *InnAjRes;
+    ListeReserv *InnLIRes;
+
 
 private slots:
     void on_button1_clicked();
@@ -54,6 +57,7 @@ private slots:
     void setupviewS();
     //void on_commandLinkButton_2_clicked();
     void on_BtnAjouterReservation_clicked();
+    void on_BtnListeReservation_clicked();
 };
 
 #endif // MAINWINDOW_H

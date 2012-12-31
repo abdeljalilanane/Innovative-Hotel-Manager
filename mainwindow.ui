@@ -492,6 +492,13 @@ color: rgb(0, 85, 0)
           </widget>
          </item>
          <item>
+          <widget class="QCommandLinkButton" name="BtnListeReservation">
+           <property name="text">
+            <string>Liste Reservation</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="verticalSpacer_9">
            <property name="orientation">
             <enum>Qt::Vertical</enum>

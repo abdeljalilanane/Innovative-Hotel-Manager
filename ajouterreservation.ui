@@ -179,6 +179,16 @@
    </item>
   </layout>
  </widget>
+ <tabstops>
+  <tabstop>nameText</tabstop>
+  <tabstop>CINText</tabstop>
+  <tabstop>phone</tabstop>
+  <tabstop>catList</tabstop>
+  <tabstop>roomList</tabstop>
+  <tabstop>dateEditArive</tabstop>
+  <tabstop>dateEditDepart</tabstop>
+  <tabstop>okButton</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
