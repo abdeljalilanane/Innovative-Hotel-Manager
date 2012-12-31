@@ -59,42 +59,52 @@
     <widget class="QComboBox" name="nationality">
      <item>
       <property name="text">
-       <string>India</string>
+       <string>Tunisie</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Bangladesh</string>
+       <string>Algerie</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Bhutan</string>
+       <string>Marroc</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>China</string>
+       <string>Egypt</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Myanmar</string>
+       <string>Russie</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Nepal</string>
+       <string>France</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Pakistan</string>
+       <string>Espagne</string>
       </property>
      </item>
      <item>
       <property name="text">
-       <string>Sri Lanka</string>
+       <string>Italie</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Germanie</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Autre</string>
       </property>
      </item>
     </widget>
