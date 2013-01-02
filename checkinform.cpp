@@ -27,6 +27,8 @@ checkInForm::checkInForm(QWidget *parent) :
 
 
     ui->datedepart2->setShown(1);
+    ui->dated2->setShown(1);
+    ui->dated->setShown(0);
     ui->datedepart->setShown(0);
 
     setupview();
@@ -303,6 +305,9 @@ void checkInForm::on_LinCIN_returnPressed()
 {
     ui->datedepart2->setShown(0);
     ui->datedepart->setShown(1);
+
+    ui->dated2->setShown(0);
+    ui->dated->setShown(1);
     QString Name;
     QString cin;
     QString phone;

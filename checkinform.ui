@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>348</width>
-    <height>464</height>
+    <height>502</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -309,7 +309,7 @@
     <widget class="QLineEdit" name="phone"/>
    </item>
    <item row="10" column="0">
-    <widget class="QLabel" name="label_12">
+    <widget class="QLabel" name="dated">
      <property name="text">
       <string>Date depart</string>
      </property>
@@ -328,6 +328,13 @@
    <item row="11" column="2">
     <widget class="QDateEdit" name="datedepart2"/>
    </item>
+   <item row="11" column="0">
+    <widget class="QLabel" name="dated2">
+     <property name="text">
+      <string>Date depart</string>
+     </property>
+    </widget>
+   </item>
   </layout>
  </widget>
  <tabstops>
@@ -339,6 +346,8 @@
   <tabstop>occupation</tabstop>
   <tabstop>purpose</tabstop>
   <tabstop>occupant</tabstop>
+  <tabstop>datedepart</tabstop>
+  <tabstop>datedepart2</tabstop>
   <tabstop>catList</tabstop>
   <tabstop>roomList</tabstop>
   <tabstop>okButton</tabstop>

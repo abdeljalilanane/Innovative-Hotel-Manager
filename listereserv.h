@@ -22,6 +22,10 @@ private slots:
 
     void on_addCat_clicked();
 
+    void on_catList_clicked();
+
+    void on_rmCat_clicked();
+
 private:
     Ui::ListeReserv *ui;
 };

@@ -91,3 +91,33 @@ void ListeReserv::on_addCat_clicked()
     u->show();
     this->close();
 }
+
+void ListeReserv::on_catList_clicked()
+{
+ ui->rmCat->setEnabled(1);
+}
+
+void ListeReserv::on_rmCat_clicked()
+{
+    int r= ui->catList->currentRow();
+    QSqlQuery req ;
+    QTableWidgetItem *z = ui->catList->item(r,0);
+    QString zs= z->text();
+    switch( QMessageBox::warning(this,"Confirmation","Voulez-vous vraiment supprimer cette reservation ? ","Oui","Non",0,1))
+    {
+    case 0:
+    req.prepare("delete from resvlist where id='"+zs+"'");
+    if (req.exec())
+    { ///Requete reussi
+    qDebug("req reussi! ");
+    QMessageBox::information(this, tr("Done"),tr("Reservation supprime avec succes! "));
+    ui->catList->removeRow(r);
+    ui->rmCat->setEnabled(0);
+     ListeReservation();
+    }
+
+    case 1:
+    default:
+    ;
+    }
+}

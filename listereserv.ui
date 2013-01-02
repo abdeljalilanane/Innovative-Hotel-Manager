@@ -116,12 +116,12 @@ p, li { white-space: pre-wrap; }
     <widget class="QTableWidget" name="catList">
      <column>
       <property name="text">
-       <string>name</string>
+       <string>id</string>
       </property>
      </column>
      <column>
       <property name="text">
-       <string>Name</string>
+       <string>name</string>
       </property>
      </column>
      <column>

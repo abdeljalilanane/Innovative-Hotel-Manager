@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>963</width>
-    <height>554</height>
+    <height>598</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -485,23 +485,9 @@ color: rgb(0, 85, 0)
           </widget>
          </item>
          <item>
-          <widget class="QCommandLinkButton" name="BtnModifierReservation">
-           <property name="text">
-            <string>Modifier Reservation</string>
-           </property>
-          </widget>
-         </item>
-         <item>
           <widget class="QCommandLinkButton" name="BtnListeReservation">
            <property name="text">
             <string>Liste Reservation</string>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QCommandLinkButton" name="EnregistrementReservation">
-           <property name="text">
-            <string>Enregistrement Reservation</string>
            </property>
           </widget>
          </item>
