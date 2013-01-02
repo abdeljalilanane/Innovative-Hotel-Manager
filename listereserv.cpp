@@ -1,5 +1,6 @@
 #include "listereserv.h"
 #include "ui_listereserv.h"
+#include "ajouterreservation.h"
 #include <QMessageBox>
 #include <QDebug>
 #include <QtSql>
@@ -36,7 +37,7 @@ void ListeReserv::ListeReservation()
 
     qDebug( "Connected!" );
     int i=0;
-
+ui->catList->setColumnCount(7);
         QSqlQuery req;
         req.prepare("SELECT * FROM resvlist");
             if( !req.exec() )
@@ -77,4 +78,16 @@ void ListeReserv::ListeReservation()
             }
 
 
+}
+
+void ListeReserv::on_okButton_clicked()
+{
+    this->close();
+}
+
+void ListeReserv::on_addCat_clicked()
+{
+    AjouterReservation *u=new AjouterReservation();
+    u->show();
+    this->close();
 }

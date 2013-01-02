@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>321</width>
+    <width>639</width>
     <height>391</height>
    </rect>
   </property>
@@ -83,7 +83,7 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="text">
-        <string>Ajouter une catégorie</string>
+        <string>Ajouter une Reservation</string>
        </property>
       </widget>
      </item>
@@ -99,7 +99,7 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
        <property name="text">
-        <string>Retirer Catégorie</string>
+        <string>Retirer Reseration</string>
        </property>
       </widget>
      </item>
@@ -113,7 +113,43 @@ p, li { white-space: pre-wrap; }
     </widget>
    </item>
    <item row="2" column="0">
-    <widget class="QTableWidget" name="catList"/>
+    <widget class="QTableWidget" name="catList">
+     <column>
+      <property name="text">
+       <string>name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Name</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Cin</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Phone</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>Room</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>in time</string>
+      </property>
+     </column>
+     <column>
+      <property name="text">
+       <string>out time</string>
+      </property>
+     </column>
+    </widget>
    </item>
   </layout>
  </widget>

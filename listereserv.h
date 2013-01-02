@@ -17,6 +17,11 @@ public:
     void ListeReservation();
     ~ListeReserv();
     
+private slots:
+    void on_okButton_clicked();
+
+    void on_addCat_clicked();
+
 private:
     Ui::ListeReserv *ui;
 };

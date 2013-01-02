@@ -68,9 +68,11 @@ void login::on_ok_clik()
         {
 
             qDebug() << qry.lastError();
+
         }
         else
         { qDebug("select agent login");
+
             while(req.next())//pour avancer les lignes
             {
                 user=req.value(1).toString();
@@ -83,6 +85,8 @@ void login::on_ok_clik()
 
     if ((loginT==user)&&(passwordT==pass))
     {
+        ui->l->clear();
+        ui->p->clear();
         if(user=="root")
         {
             userManager *u=new userManager;
@@ -97,6 +101,13 @@ void login::on_ok_clik()
         }
 
      }
+    else
+    {
+        ui->l->setText("login introuvable");
+        ui->p->setText("passe introuvable");
+
+    }
+
 
 
 

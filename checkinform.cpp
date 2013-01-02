@@ -19,6 +19,15 @@ checkInForm::checkInForm(QWidget *parent) :
 
     QRegExp regExp3("[A-Za-z0-9][A-Za-z0-9, ]*[A-Za-z0-9 ]*");
     ui->addText->setValidator(new QRegExpValidator(regExp3, this));
+    QRegExp regExp4("[0-9]{8,8}");
+    ui->LinCIN->setValidator(new QRegExpValidator(regExp4, this));
+    QDate QDTime = QDate::currentDate();
+    QDTime.addDays(1);
+    ui->datedepart2->setDate(QDTime);
+
+
+    ui->datedepart2->setShown(1);
+    ui->datedepart->setShown(0);
 
     setupview();
 
@@ -292,6 +301,8 @@ void checkInForm::on_roomList_currentIndexChanged()
 
 void checkInForm::on_LinCIN_returnPressed()
 {
+    ui->datedepart2->setShown(0);
+    ui->datedepart->setShown(1);
     QString Name;
     QString cin;
     QString phone;
@@ -335,6 +346,7 @@ void checkInForm::on_LinCIN_returnPressed()
     }
     ui->nameText->setText(Name);
     ui->phone->setText(phone);
+    ui->datedepart->setText(datfep);
     ui->roomList->clear();
     ui->roomList->addItem(NoChom);
     ui->catList->setEnabled(0);
@@ -348,6 +360,6 @@ void checkInForm::on_LinCIN_returnPressed()
 
 void checkInForm::on_occupant_editingFinished()
 {
-    ui->okButton->setEnabled((ui->nameText->hasAcceptableInput())&&(ui->phone->hasAcceptableInput())&&(ui->addText->hasAcceptableInput()));
+    ui->okButton->setEnabled((ui->nameText->hasAcceptableInput())&&(ui->phone->hasAcceptableInput())&&(ui->addText->hasAcceptableInput())&&(ui->LinCIN->hasAcceptableInput()));
 
 }
