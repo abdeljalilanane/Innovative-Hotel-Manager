@@ -23,6 +23,8 @@ private slots:
 
     void on_supprimer_clicked();
 
+    void on_exit_clicked();
+
 private:
     Ui::userManager *ui;
 };

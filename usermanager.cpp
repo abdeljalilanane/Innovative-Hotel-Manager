@@ -1,5 +1,6 @@
 #include "usermanager.h"
 #include "ui_usermanager.h"
+#include "login.h"
 #include <QDebug>
 #include <QtSql>
 #include <QTableWidget>
@@ -126,4 +127,11 @@ void userManager::on_supprimer_clicked()
     default:
     ;
     }
+}
+
+void userManager::on_exit_clicked()
+{
+    login *u=new login();
+    this->close();
+    u->show();
 }

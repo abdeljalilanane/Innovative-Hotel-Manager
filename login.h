@@ -22,6 +22,7 @@ private:
 private slots:
     void on_ok_clik();
 
+    void on_B_nook_clicked();
 };
 
 #endif // LOGIN_H

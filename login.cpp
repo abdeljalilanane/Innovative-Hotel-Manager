@@ -114,3 +114,9 @@ void login::on_ok_clik()
 }
 
 
+
+void login::on_B_nook_clicked()
+{
+    ui->loginT->clear();
+    ui->passwordT->clear();
+}

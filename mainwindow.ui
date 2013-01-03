@@ -10,6 +10,18 @@
     <height>598</height>
    </rect>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>963</width>
+    <height>598</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>963</width>
+    <height>598</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Innovative Hotel Manager</string>
   </property>
