@@ -217,7 +217,7 @@ void checkOutForm::on_payButton_clicked()
 
     updateShits();
     ui->coButton->setEnabled(1);
-    ui->impButton->setEnabled(1);
+    //ui->impButton->setEnabled(1);
 
 }
 
