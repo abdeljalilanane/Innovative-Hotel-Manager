@@ -24,7 +24,7 @@ private slots:
     void on_roomNo_currentIndexChanged();
     void on_payButton_clicked();
     void on_coButton_clicked();
-
+    void on_pushButton_clicked();
 };
 
 #endif // CHECKOUTFORM_H

@@ -2,6 +2,9 @@
 #include "ui_checkoutform.h"
 #include <QtSql>
 #include <QDebug>
+#include <QtGui>
+
+
 
 checkOutForm::checkOutForm(QWidget *parent) :
     QDialog(parent),
@@ -214,6 +217,7 @@ void checkOutForm::on_payButton_clicked()
 
     updateShits();
     ui->coButton->setEnabled(1);
+    ui->impButton->setEnabled(1);
 
 }
 
@@ -456,6 +460,21 @@ void checkOutForm::updateShits()
          ui->payButton->setEnabled(1);
          ui->coButton->setEnabled(0);
      }
+
+
+}
+
+void checkOutForm::on_pushButton_clicked()
+{
+
+    qDebug("Impression en cour");
+    QPrinter *printer = new QPrinter;
+            QPrintDialog *printDialog = new QPrintDialog(printer, this);
+            if (printDialog->exec() == QDialog::Accepted) {
+                QPainter p(printer);
+                QPixmap pm = QPixmap::grabWidget(this);
+                p.drawPixmap(0, 0, pm);
+            }
 
 
 }
