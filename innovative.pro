@@ -4,7 +4,7 @@ QT       += sql
 
 TARGET = innovative
 TEMPLATE = app
-
+CONFIG += x86_64
 
 SOURCES += main.cpp\
         mainwindow.cpp \

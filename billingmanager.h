@@ -2,6 +2,7 @@
 #define BILLINGMANAGER_H
 
 #include <QDialog>
+#include <QTableWidget>
 
 namespace Ui {
     class billingManager;
@@ -15,6 +16,7 @@ public:
     ~billingManager();
     void setupview();
     void updatetable();
+    void print(QTableWidget * tableau_a_imprimer, QString titre);
 private:
     Ui::billingManager *ui;
 
@@ -23,6 +25,7 @@ private slots:
     void on_roomNo_currentIndexChanged();
     void on_payButton_clicked();
     void on_payForm_textChanged();
+    void on_print_clicked();
 };
 
 #endif // BILLINGMANAGER_H

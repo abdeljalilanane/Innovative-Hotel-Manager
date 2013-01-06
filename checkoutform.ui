@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>290</width>
+    <width>283</width>
     <height>331</height>
    </rect>
   </property>
@@ -158,16 +158,6 @@ p, li { white-space: pre-wrap; }
         </size>
        </property>
       </spacer>
-     </item>
-     <item>
-      <widget class="QPushButton" name="impButton">
-       <property name="enabled">
-        <bool>true</bool>
-       </property>
-       <property name="text">
-        <string>imprimer</string>
-       </property>
-      </widget>
      </item>
      <item>
       <widget class="QPushButton" name="payButton">
